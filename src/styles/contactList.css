@@ -1,5 +1,5 @@
 .list__content {
-  width: 50vw;
+  width: 30vw;
   margin: auto;
   font-size: 1.75rem;
   color: white;
@@ -14,6 +14,8 @@
   width: 100%;
   border-radius: 5px;
   padding: 0.5rem;
+  text-align: left;
+  padding-left: 10%;
 }
 
 .list__item:nth-child(odd) {

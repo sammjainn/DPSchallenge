@@ -12,22 +12,21 @@
   margin-top: 3rem;
   background-color: #2a9d8f;
 }
-.user__left,
-.user__right {
+.user__content {
   height: 80%;
-  width: 40%;
+  width: 60%;
   border-radius: 50px;
   background: #2a9d8f;
   box-shadow: 20px 20px 60px #24857a, -20px -20px 60px #30b5a4;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: 1.75rem;
-  overflow: auto;
   color: white;
+  padding: 1rem;
 }
-.user__right input {
+.user__input input {
   border-radius: 5px;
   outline: none;
   border: none;
@@ -40,8 +39,7 @@
   color: black;
   background: white;
   border-radius: 5px;
-  padding: 0.3rem 0.5rem;
-  margin-top: 2rem;
+  padding: 0.5rem;
 }
 .user__submit:hover {
   background-color: lightgray;
@@ -49,6 +47,32 @@
 .user__subheading {
   font-weight: bold;
   font-size: 2rem;
-  text-decoration: underline;
   margin-bottom: 1rem;
+}
+
+.user__input {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.user__content ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  overflow: auto;
+}
+
+.user__item {
+  border: 1px solid white;
+  list-style: none;
+  padding: 0.8rem;
+  width: 60%;
+  margin: auto;
+  margin: 0.5rem;
 }

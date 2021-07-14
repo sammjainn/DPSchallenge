@@ -45,6 +45,7 @@ class AddContact extends Component {
             <p>First Name: </p>
             <input
               type='text'
+              required
               value={this.state.firstName}
               onChange={(e) => this.setState({ firstName: e.target.value })}
             ></input>
@@ -53,6 +54,7 @@ class AddContact extends Component {
             <p>Last Name: </p>
             <input
               type='text'
+              required
               value={this.state.lastName}
               onChange={(e) => this.setState({ lastName: e.target.value })}
             ></input>
@@ -61,6 +63,7 @@ class AddContact extends Component {
             <p>Email: </p>
             <input
               type='email'
+              required
               value={this.state.email}
               onChange={(e) => this.setState({ email: e.target.value })}
             ></input>

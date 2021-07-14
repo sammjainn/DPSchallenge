@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/user.css';
 class User extends Component {
-  state = { allUsers: [], user: '' };
+  state = { allUsers: [], user: '', text: '' };
 
   componentDidMount() {
     if (localStorage.getItem('allUsers')) {
@@ -38,27 +38,33 @@ class User extends Component {
       <div className='user'>
         <h1>Welcome to Contacts App</h1>
         <div className='user__container'>
-          <div className='user__left'>
-            <div className='user__subheading'>Existing users:</div>
+          <div className='user__content'>
+            <div className='user__subheading'>
+              {this.state.allUsers.length
+                ? 'EXISTING USERS'
+                : 'NO USER EXISTS, ADD NEW USER'}
+            </div>
             <ul>
               {this.state.allUsers.map((userObj, i) => (
-                <li key={i}>{userObj.user}</li>
+                <li key={i} className='user__item'>
+                  {userObj.user}
+                </li>
               ))}
             </ul>
-          </div>
-          <div className='user__right'>
-            <div className='user__subheading'> Enter username </div>
-            <input
-              value={this.state.user}
-              onChange={(e) => this.setState({ user: e.target.value })}
-            ></input>
-            <Link
-              className='user__submit'
-              onClick={this.handleSubmit}
-              to='/add'
-            >
-              Continue
-            </Link>
+            <div className='user__input'>
+              <input
+                value={this.state.user}
+                onChange={(e) => this.setState({ user: e.target.value })}
+                placeholder='Enter username'
+              ></input>
+              <Link
+                className='user__submit'
+                onClick={this.handleSubmit}
+                to='/add'
+              >
+                Continue
+              </Link>
+            </div>
           </div>
         </div>
       </div>
