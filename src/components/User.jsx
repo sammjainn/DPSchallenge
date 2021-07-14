@@ -18,7 +18,7 @@ class User extends Component {
     let found = false;
     for (let i = 0; i < allUsers.length; i++) {
       let obj = allUsers[i];
-      if (obj.user == user) {
+      if (obj.user === user) {
         userObj = obj;
         found = true;
         break;
@@ -31,7 +31,6 @@ class User extends Component {
       localStorage.setItem('allUsers', JSON.stringify(this.state.allUsers));
     }
     localStorage.setItem('user', JSON.stringify(userObj));
-    console.log(allUsers, user, found);
   };
 
   render() {
@@ -42,8 +41,8 @@ class User extends Component {
           <div className='user__left'>
             <div className='user__subheading'>Existing users:</div>
             <ul>
-              {this.state.allUsers.map((userObj) => (
-                <li>{userObj.user}</li>
+              {this.state.allUsers.map((userObj, i) => (
+                <li key={i}>{userObj.user}</li>
               ))}
             </ul>
           </div>

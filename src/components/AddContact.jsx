@@ -26,7 +26,7 @@ class AddContact extends Component {
     localStorage.setItem('user', JSON.stringify(userObj));
     let allUsers = JSON.parse(localStorage.getItem('allUsers'));
     for (let i = 0; i < allUsers.length; i++) {
-      if (allUsers[i].user == userObj.user) {
+      if (allUsers[i].user === userObj.user) {
         allUsers[i] = userObj;
       }
     }
@@ -34,7 +34,6 @@ class AddContact extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className='add'>
         <Header></Header>

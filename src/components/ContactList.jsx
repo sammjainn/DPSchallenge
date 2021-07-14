@@ -10,7 +10,6 @@ class ContactList extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className='list'>
         <Header></Header>
@@ -20,7 +19,7 @@ class ContactList extends Component {
         <div className='list__content'>
           {this.state.contacts.map((contact, i) => {
             return (
-              <div className='list__item'>
+              <div className='list__item' key={i}>
                 <strong>#{i} </strong> {contact.firstName} {contact.lastName}{' '}
                 {contact.email}
               </div>
