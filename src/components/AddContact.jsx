@@ -36,26 +36,41 @@ class AddContact extends Component {
   render() {
     console.log(this.state);
     return (
-      <div>
+      <div className='add'>
         <Header></Header>
-        <div>Add contacts page</div>
-        <div>
-          <input
-            type='text'
-            value={this.state.firstName}
-            onChange={(e) => this.setState({ firstName: e.target.value })}
-          ></input>
-          <input
-            type='text'
-            value={this.state.lastName}
-            onChange={(e) => this.setState({ lastName: e.target.value })}
-          ></input>
-          <input
-            type='email'
-            value={this.state.email}
-            onChange={(e) => this.setState({ email: e.target.value })}
-          ></input>
-          <Link onClick={this.handleSubmit} to='/contacts'>
+        <h2>
+          Add new contact for <strong>{this.state.user}</strong>
+        </h2>
+        <div className='add__form'>
+          <div className='add__item'>
+            <p>First Name: </p>
+            <input
+              type='text'
+              value={this.state.firstName}
+              onChange={(e) => this.setState({ firstName: e.target.value })}
+            ></input>
+          </div>
+          <div className='add__item'>
+            <p>Last Name: </p>
+            <input
+              type='text'
+              value={this.state.lastName}
+              onChange={(e) => this.setState({ lastName: e.target.value })}
+            ></input>
+          </div>
+          <div className='add__item'>
+            <p>Email: </p>
+            <input
+              type='email'
+              value={this.state.email}
+              onChange={(e) => this.setState({ email: e.target.value })}
+            ></input>
+          </div>
+          <Link
+            className='add__submit'
+            onClick={this.handleSubmit}
+            to='/contacts'
+          >
             Add contact
           </Link>
         </div>

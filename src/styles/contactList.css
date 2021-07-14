@@ -1,0 +1,24 @@
+.list__content {
+  width: 50vw;
+  margin: auto;
+  font-size: 1.75rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 1rem;
+}
+.list__item {
+  background-color: #2a9d8f;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.list__item:nth-child(odd) {
+  background-color: #2a9d8f;
+}
+.list__item:nth-child(even) {
+  background-color: #228176;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import '../styles/contactList.css';
 class ContactList extends Component {
   state = { user: '', contacts: [] };
 
@@ -11,9 +12,21 @@ class ContactList extends Component {
   render() {
     console.log(this.state);
     return (
-      <div>
+      <div className='list'>
         <Header></Header>
-        <div>All contacts list</div>
+        <h2>
+          All contacts of <strong>{this.state.user}</strong>
+        </h2>
+        <div className='list__content'>
+          {this.state.contacts.map((contact, i) => {
+            return (
+              <div className='list__item'>
+                <strong>#{i} </strong> {contact.firstName} {contact.lastName}{' '}
+                {contact.email}
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
