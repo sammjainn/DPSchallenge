@@ -27,7 +27,7 @@
   overflow: auto;
   color: white;
 }
-input {
+.user__right input {
   border-radius: 5px;
   outline: none;
   border: none;
