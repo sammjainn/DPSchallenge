@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import '../styles/user.css';
 class User extends Component {
   state = { allUsers: [], user: '' };
 
@@ -36,22 +36,31 @@ class User extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <div>Existing users:</div>
-          {this.state.allUsers.map((userObj) => (
-            <div>{userObj.user}</div>
-          ))}
-        </div>
-        <div>
-          Enter username
-          <input
-            value={this.state.user}
-            onChange={(e) => this.setState({ user: e.target.value })}
-          ></input>
-          <Link onClick={this.handleSubmit} to='/add'>
-            Continue
-          </Link>
+      <div className='user'>
+        <h1>Welcome to Contacts App</h1>
+        <div className='user__container'>
+          <div className='user__left'>
+            <div className='user__subheading'>Existing users:</div>
+            <ul>
+              {this.state.allUsers.map((userObj) => (
+                <li>{userObj.user}</li>
+              ))}
+            </ul>
+          </div>
+          <div className='user__right'>
+            <div className='user__subheading'> Enter username </div>
+            <input
+              value={this.state.user}
+              onChange={(e) => this.setState({ user: e.target.value })}
+            ></input>
+            <Link
+              className='user__submit'
+              onClick={this.handleSubmit}
+              to='/add'
+            >
+              Continue
+            </Link>
+          </div>
         </div>
       </div>
     );

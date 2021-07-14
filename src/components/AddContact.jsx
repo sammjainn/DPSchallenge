@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Header from './Header';
 class AddContact extends Component {
   state = { user: '', contacts: [] };
 
@@ -12,6 +12,7 @@ class AddContact extends Component {
     console.log(this.state);
     return (
       <div>
+        <Header></Header>
         <div>Add contacts page</div>
       </div>
     );
